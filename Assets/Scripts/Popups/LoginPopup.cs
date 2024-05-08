@@ -25,7 +25,7 @@ public class LoginPopup : MonoBehaviour
         }
 
         LevelManager.instance.InstantiateCollectables(50);
-        LevelManager.instance.CreatePlayer(usuario.id, usuario.pontos);
+        LevelManager.instance.CreatePlayer(usuario.id, usuario.name, usuario.pontos);
 
         Destroy(gameObject);
     }

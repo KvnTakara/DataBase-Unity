@@ -33,12 +33,13 @@ public class LevelManager : MonoBehaviour
 
     #region Functions
 
-    public void CreatePlayer(int _id, int _pontos)
+    public void CreatePlayer(int _id, string _name, int _pontos)
     {
         GameObject newPlayer = Instantiate(PlayerPrefabs);
         newPlayer.transform.position = Vector3.zero;
 
         newPlayer.GetComponent<PlayerData>().Id = _id;
+        newPlayer.GetComponent<PlayerData>().Name = _name;
         newPlayer.GetComponent<PlayerData>().Points = _pontos;
     }
 

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class RankingPopup : MonoBehaviour
@@ -25,6 +26,9 @@ public class RankingPopup : MonoBehaviour
             if (_usuario.pontos > 0)
             {
                 GameObject rankingInstance = Instantiate(rankingPlaceholder, container);
+
+                rankingInstance.GetComponent<RankingCard>().userName.text = _usuario.name.ToString();
+                rankingInstance.GetComponent<RankingCard>().score.text = _usuario.pontos.ToString();
             }
         }
     }

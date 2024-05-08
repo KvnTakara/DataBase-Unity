@@ -8,6 +8,7 @@ public class PlayerHud : MonoBehaviour
     #region Variables
 
     [SerializeField] TextMeshProUGUI score;
+    [SerializeField] TextMeshProUGUI userName;
 
     PlayerData playerData;
 
@@ -20,6 +21,7 @@ public class PlayerHud : MonoBehaviour
         playerData = GetComponentInParent<PlayerData>();
 
         UpdateScoreUI();
+        UpdateNameUI();
     }
 
     #endregion
@@ -28,7 +30,12 @@ public class PlayerHud : MonoBehaviour
 
     public void UpdateScoreUI()
     {
-        score.text = playerData.Points.ToString();
+        score.text = $"Score: {playerData.Points.ToString()}";
+    }
+
+    public void UpdateNameUI()
+    {
+        userName.text = playerData.Name;
     }
 
     #endregion

@@ -90,6 +90,8 @@ public class DataManager : MonoBehaviour
     /// </summary>
     public static async void RankingUsuarios()
     {
+        Debug.Log("GerandoRankingUsuarios");
+
         string requestUrl = $"{apiUrl}?apikey={apiKey}";
 
         UnityWebRequest request = UnityWebRequest.Get(requestUrl);
